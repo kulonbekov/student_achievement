@@ -22,8 +22,7 @@ public class Exam {
     Long id;
     Date examDate;
     int duration;
-    int grade;
-    Boolean active;
+    boolean active;
     @ManyToOne
     @JoinColumn(name = "subject_id")
     Subject subject;

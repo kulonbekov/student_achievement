@@ -22,12 +22,12 @@ public class Student {
     String lastName;
     String firstName;
     String patronymic;
-    Boolean active;
+    boolean active;
+    String address;
     @ManyToOne
     @JoinColumn(name = "scholarship_id")
     Scholarship scholarship;
-    @ManyToOne
-    @JoinColumn(name = "subject_id")
-    Subject subject;
+
+
 
 }

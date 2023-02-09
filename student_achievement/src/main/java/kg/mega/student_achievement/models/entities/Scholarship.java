@@ -1,5 +1,6 @@
 package kg.mega.student_achievement.models.entities;
 
+import kg.mega.student_achievement.models.utils.DateUtil;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +24,12 @@ public class Scholarship {
     int scholarshipAmount;
     Date startDate;
     Date endDate;
-    Boolean active;
-
+    boolean active;
+    @PrePersist
+    protected void onCreate() {
+        endDate = DateUtil.getINSTANCE().getEndDate();
+        startDate = new Date();
+    }
 
 }
+

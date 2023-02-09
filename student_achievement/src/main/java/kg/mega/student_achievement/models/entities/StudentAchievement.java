@@ -1,5 +1,6 @@
 package kg.mega.student_achievement.models.entities;
 
+import kg.mega.student_achievement.models.enums.Grade;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,15 +14,20 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "teachers")
-public class Teacher {
-
+@Table(name = "Student_achievements")
+public class StudentAchievement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String lastName;
-    String firstName;
-    String patronymic;
-    boolean active;
-
+    @ManyToOne
+    @JoinColumn(name = "student_id")
+    Student student;
+    @ManyToOne
+    @JoinColumn(name = "exam_id")
+    Exam exam;
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    Teacher teacher;
+    @Enumerated(EnumType.STRING)
+    Grade grade;
 }

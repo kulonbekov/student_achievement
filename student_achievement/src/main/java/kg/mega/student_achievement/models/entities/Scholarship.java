@@ -21,7 +21,7 @@ public class Scholarship {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    int scholarshipAmount;
+    double scholarshipAmount;
     Date startDate;
     Date endDate;
     boolean active;

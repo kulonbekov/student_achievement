@@ -14,6 +14,12 @@ public class StudentAchServiceImpl implements StudentAchService {
         this.rep = rep;
     }
 
+
+    @Override
+    public StudentAchievement save(StudentAchievement studentAchievement) {
+        return rep.save(studentAchievement);
+    }
+
     @Override
     public StudentAchievement findById(long id) {
         return rep.findById(id).orElseThrow(()-> new RuntimeException("Не найдено"));

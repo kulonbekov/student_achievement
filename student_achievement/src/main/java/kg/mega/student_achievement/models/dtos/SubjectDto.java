@@ -15,6 +15,6 @@ public class SubjectDto {
     String subjectName;
     @JsonProperty("Teacher")
     String teacherName;
-    @JsonProperty("exams")
-    List<ExamDto> exams;
+    @JsonProperty("exam")
+    ExamDto exam;
 }
